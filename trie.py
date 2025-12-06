@@ -3,6 +3,7 @@ class TrieNode:
         self.children = {}
         self.is_end_of_word = False
         self.contacts = []
+
 class Trie:
     def __init__(self):
         self.root = TrieNode()
@@ -15,6 +16,7 @@ class Trie:
             node = node.children[char]
         node.is_end_of_word = True
         node.contacts.append(contact)
+
     def search_prefix(self, prefix):
         node = self.root
         for char in prefix.lower():
@@ -22,6 +24,7 @@ class Trie:
                 return []
             node = node.children[char]
         return self._collect_contacts(node)
+    
     def _collect_contacts(self, node):
         found = []
         if node.is_end_of_word:
