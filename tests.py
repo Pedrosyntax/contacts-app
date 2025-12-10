@@ -3,12 +3,12 @@ from index import ContactsIndex
 
 def run_tests():
     print("Starting ContactsIndex tests..")
-    contacts_index = ContactsIndex()
+    contacts_index = ContactsIndex() #main contact manager to hold and search contacts
 
     contact1 = Contact("Pedro", "12345")
     contact2 = Contact("Maria", "56789")
     contact3 = Contact("Belle", "54321")
-    contacts_index.add_contact(contact1)
+    contacts_index.add_contact(contact1) 
     contacts_index.add_contact(contact2)
     contacts_index.add_contact(contact3)
 
