@@ -8,11 +8,13 @@ def run_tests():
     contact1 = Contact("Pedro", "12345")
     contact2 = Contact("Maria", "56789")
     contact3 = Contact("Belle", "54321")
-    contact4 = Contact("Mylo", "676767")
+    contact4 = Contact("Mylo", "898989")
+    contact5 = Contact("Paula", "232323")
     contacts_index.add_contact(contact1) 
     contacts_index.add_contact(contact2)
     contacts_index.add_contact(contact3)
     contacts_index.add_contact(contact4)
+    contacts_index.add_contact(contact5)
 
     print("Find by phone 12345:", contacts_index.find_by_phone("12345").full_name)
 
@@ -31,6 +33,8 @@ def run_tests():
     contact_id = contacts_index.add_contact(Contact("Josh", "55555"))
     contacts_index.remove_contact(contact_id)
     print("After removal, search Josh", contacts_index.find_by_name("Josh"))
+
+    print("Prefix search 'XYZ':", contacts_index.search_by_prefix("XYZ"))
 
 if __name__ == "__main__":
     run_tests()

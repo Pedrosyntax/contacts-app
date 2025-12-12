@@ -2,7 +2,7 @@ class TrieNode:
     def __init__(self):
         self.children = {}
         self.is_end_of_word = False # mark if a name ends here
-        self.contacts = []
+        self.contacts = [] # usedd list inside the trie to store contacts, the main storage is dictionaries for quicker access
 
 class Trie:
     def __init__(self):
@@ -28,7 +28,7 @@ class Trie:
     def _collect_contacts(self, node):
         found = [] #if a full name end here, add those contacts
         if node.is_end_of_word:
-            found.extend(node.contacts)
+            found.extend(node.contacts) 
         for child_node in node.children.values(): #keep checking all the children letters
             found.extend(self._collect_contacts(child_node))
         return found
