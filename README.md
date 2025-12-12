@@ -1,2 +1,0 @@
-# contacts-app
-Python Contacts 
